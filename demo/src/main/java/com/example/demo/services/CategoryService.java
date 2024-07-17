@@ -1,8 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.entities.Order;
 import com.example.demo.entities.Category;
-import com.example.demo.repositories.OrderRepository;
 import com.example.demo.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,17 +9,17 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class OrderService {
-
+public class CategoryService {
     @Autowired
-    private OrderRepository repository;
+    private CategoryRepository repository;
 
-    public List<Order> findAll() {
+    public List<Category> findAll() {
         return repository.findAll();
     }
 
-    public Order findById(Long id) {
-        Optional<Order> obj = repository.findById(id);
+    public Category findById(Long id) {
+        Optional<Category> obj = repository.findById(id);
+
         return obj.get();
     }
 
